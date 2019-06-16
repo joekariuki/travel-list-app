@@ -63,5 +63,12 @@ class UI {
 document.addEventListener('DOMContentLoaded', UI.displayTrips);
 
 // Event: Add a book
+document.querySelector('#trip-form').addEventListener('submit', (e) => {
+    // Get form values
+    const location = document.querySelector('#location').value;
+    const arrivalDate = document.querySelector('#arrival-date').value;
+    const departDate = document.querySelector('#depart-date').value;
+    const tripNotes = document.querySelector('#trip-notes').value;
+})
 
 // Event: Remove a book
