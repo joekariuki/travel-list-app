@@ -5,9 +5,10 @@ class Travel {
         this.location = location,
         this.arrivalDate = arrivalDate,
         this.departureDate = departureDate,
-        this.notes = notes,
+        this.notes = notes
     }
 }
+
 // UI Class: Handle UI Tasks
 class UI {
     static displayTrips() {
@@ -31,29 +32,26 @@ class UI {
               notes: 'Such a great place to visit. I think I want to live here'
             }
         ];
-
         const trips = StoredTrips;
-
-        trips.forEach()(trip) => UI.addTripToList(trip));
+        trips.forEach(trip => UI.addTripToList(trip));
     }
-    static addTripToList(trip) {
-        const list = document.querySelector('#trip-list');
 
+    static addTripToList(trip) {
+
+        const list = document.querySelector('#trip-list');
         const row = document.createElement('tr');
-        row.inneHTML = `
+        row.innerHTML = `
             <td>${trip.location}</td>
             <td>${trip.arrivalDate}</td>
             <td>${trip.departureDate}</td>
             <td>${trip.notes}</td>
             <td>
                 <a href="#" class="button is-danger delete">
-                    <span>Delete</span>
-                    <span>
+                    <span class="icon">
                         <i class="fas fa-times"></i>
                     </span>
                 </a>
-            </td>
-        `;
+            </td>`;
 
         list.appendChild(row);
     }
@@ -62,7 +60,7 @@ class UI {
 // Store Class: Handles Storage
 
 // Event: Display books
-
+document.addEventListener('DOMContentLoaded', UI.displayTrips);
 
 // Event: Add a book
 
