@@ -73,7 +73,9 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
 
     // Instatiate trip
     const trip = new Trip(location, arrivalDate, departDate, tripNotes);
-    console.log(trip);
+
+    // Add trip to UI
+    UI.addTripToList(trip);
 })
 
 // Event: Remove a trip
