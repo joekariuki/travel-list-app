@@ -53,6 +53,13 @@ class UI {
 
         list.appendChild(row);
     }
+
+    static clearFields() {
+        document.querySelector('#location').value = '';
+        document.querySelector('#arrival-date').value = '';
+        document.querySelector('#depart-date').value = '';
+        document.querySelector('#trip-notes').value = '';
+    }
 }
 
 // Store Class: Handles Storage
@@ -76,6 +83,10 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
 
     // Add trip to UI
     UI.addTripToList(trip);
+
+    // Clear fields
+    UI.clearFields();
+
 })
 
 // Event: Remove a trip
