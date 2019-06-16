@@ -1,6 +1,6 @@
 
-//  Travel Class: Represents a trip
-class Travel {
+//  Trip Class: Represents a trip
+class Trip {
     constructor(location, arrivalDate, departureDate, notes) {
         this.location = location,
         this.arrivalDate = arrivalDate,
@@ -69,6 +69,8 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
     const arrivalDate = document.querySelector('#arrival-date').value;
     const departDate = document.querySelector('#depart-date').value;
     const tripNotes = document.querySelector('#trip-notes').value;
+
+    // Instatiate trip
 })
 
 // Event: Remove a trip
