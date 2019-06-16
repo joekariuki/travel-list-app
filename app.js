@@ -1,11 +1,11 @@
 
 //  Trip Class: Represents a trip
 class Trip {
-    constructor(location, arrivalDate, departureDate, notes) {
+    constructor(location, arrivalDate, departDate, tripNotes) {
         this.location = location,
         this.arrivalDate = arrivalDate,
-        this.departureDate = departureDate,
-        this.notes = notes
+        this.departDate = departDate,
+        this.tripNotes = tripNotes
     }
 }
 
@@ -16,20 +16,20 @@ class UI {
             {
               location: 'Paris, France',
               arrivalDate: '19th March 2019',
-              departureDate: '29th March 2019',
-              notes: 'Great trip! I loved experiencing the french culture. It was a bit cold though :('
+              departDate: '29th March 2019',
+              tripNotes: 'Great trip! I loved experiencing the french culture. It was a bit cold though :('
             },
             {
               location: 'Seminyak, Bali',
               arrivalDate: '22nd May 2019',
-              departureDate: '1st June 2019',
-              notes: 'I loved Bali! The weather and beaches were amazing!'
+              departDate: '1st June 2019',
+              tripNotes: 'I loved Bali! The weather and beaches were amazing!'
             },
             {
               location: 'Cape Town, South Africa',
               arrivalDate: '5th October 2019',
-              departureDate: '5th November 2019',
-              notes: 'Such a great place to visit. I think I want to live here'
+              departDate: '5th November 2019',
+              tripNotes: 'Such a great place to visit. I think I want to live here'
             }
         ];
         const trips = StoredTrips;
@@ -43,8 +43,8 @@ class UI {
         row.innerHTML = `
             <td>${trip.location}</td>
             <td>${trip.arrivalDate}</td>
-            <td>${trip.departureDate}</td>
-            <td>${trip.notes}</td>
+            <td>${trip.departDate}</td>
+            <td>${trip.tripNotes}</td>
             <td>
                 <a href="#" class="button is-danger delete">
                     <span class="icon">
@@ -64,6 +64,9 @@ document.addEventListener('DOMContentLoaded', UI.displayTrips);
 
 // Event: Add a trip
 document.querySelector('#trip-form').addEventListener('submit', (e) => {
+
+    // Prevent actual submit
+    // e.preventDefault();
     // Get form values
     const location = document.querySelector('#location').value;
     const arrivalDate = document.querySelector('#arrival-date').value;
@@ -71,6 +74,8 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
     const tripNotes = document.querySelector('#trip-notes').value;
 
     // Instatiate trip
+    const trip = new Trip(location, arrivalDate, departDate, tripNotes);
+    console.log(trip);
 })
 
 // Event: Remove a trip
