@@ -59,10 +59,10 @@ class UI {
 
 // Store Class: Handles Storage
 
-// Event: Display books
+// Event: Display trips
 document.addEventListener('DOMContentLoaded', UI.displayTrips);
 
-// Event: Add a book
+// Event: Add a trip
 document.querySelector('#trip-form').addEventListener('submit', (e) => {
     // Get form values
     const location = document.querySelector('#location').value;
@@ -71,4 +71,4 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
     const tripNotes = document.querySelector('#trip-notes').value;
 })
 
-// Event: Remove a book
+// Event: Remove a trip
