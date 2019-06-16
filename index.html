@@ -11,74 +11,44 @@
 </head>
 
 <body>
+    <div class="container mt-4">
+        <h1 class="display-4 text-center">
+            <i class="fas fa-globe-americas text-success"></i>
+            My<span class="text-success">Trips</span>
+        </h1>
+        <form id="trip-form">
+            <div class="form-group">
+                <label for="location">Trip Location</label>
+                <input class="form-control" type="text" placeholder="Paris, France" id="location">
+            </div>
+            <div class="form-group">
+                <label for="location">Arrival Date</label>
+                <input class="form-control" type="date" id="arrival-date">
+            </div>
+            <div class="form-group">
+                <label for="location">Depature Date</label>
+                <input class="form-control" type="date" id="depart-date">
+            </div>
+            <div class="form-group">
+                <label for="location">Trip Notes</label>
+                <textarea class="form-control" type="text" placeholder="How was the trip?" id="location" row="5"></textarea>
+            </div>
+            <input type="submit" value="Add Trip" class="btn btn-success btn-block">
+        </form>
 
-    <section class="hero is-bold">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title is-2 has-text-centered">
-              <i class="fas fa-globe-americas has-text-primary"></i>
-                   My<span class="is-info has-text-primary">Travel</span>
-            </h1>
-        </div>
+        <table class="table mt-5">
+            <thead>
+              <tr>
+                <th scope="col">Location</th>
+                <th scope="col">Arrival Date</th>
+                <th scope="col">Depature Date</th>
+                <th scope="col">Trip Notes</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody id="trip-list"></tbody>
+        </table>
     </div>
-
-    </section>
-
-    <section classs="section">
-      <div class="container" id="trip-form">
-          <div class="field">
-              <label class="label">Trip Location</label>
-              <div class="control">
-                  <input class="input" type="text" placeholder="Paris, France" id="location">
-              </div>
-          </div>
-
-          <div class="field">
-              <label class="label">Arrival Date</label>
-              <div class="control">
-                  <input class="input" type="text" placeholder="1st Jan 2019" id="arrival-date">
-              </div>
-          </div>
-
-          <div class="field">
-              <label class="label">Depature Date</label>
-              <div class="control">
-                  <input class="input" type="text" placeholder="19th Jan 2019" id="depart-date">
-              </div>
-          </div>
-
-          <div class="field">
-              <label class="label"> Trip Notes</label>
-              <div class="control">
-                  <textarea class="textarea" placeholder="How was the trip?" id="trip-notes"></textarea>
-              </div>
-          </div>
-
-          <div class="field">
-              <div class="control">
-                  <input type="submit" value="Add Trip" class="button is-primary is-fullwidth is-medium">
-              </div>
-          </div>
-      </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <table class="table" align="center">
-                <thead>
-                  <tr>
-                    <th>Location</th>
-                    <th>Arrival Date</th>
-                    <th>Depature Date</th>
-                    <th>Trip Notes</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody id="trip-list"></tbody>
-            </table>
-        </div>
-    </section>
-
     <script src="app.js"></script>
 </body>
 </html>
