@@ -46,10 +46,8 @@ class UI {
             <td>${trip.departDate}</td>
             <td>${trip.tripNotes}</td>
             <td>
-                <a href="#" class="button is-danger delete">
-                    <span class="icon">
+                <a href="#" class="btn btn-danger delete btn-sm">
                         <i class="fas fa-times"></i>
-                    </span>
                 </a>
             </td>`;
 
@@ -66,7 +64,7 @@ document.addEventListener('DOMContentLoaded', UI.displayTrips);
 document.querySelector('#trip-form').addEventListener('submit', (e) => {
 
     // Prevent actual submit
-    // e.preventDefault();
+    e.preventDefault();
     // Get form values
     const location = document.querySelector('#location').value;
     const arrivalDate = document.querySelector('#arrival-date').value;
