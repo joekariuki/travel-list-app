@@ -46,12 +46,18 @@ class UI {
             <td>${trip.departDate}</td>
             <td>${trip.tripNotes}</td>
             <td>
-                <a href="#" class="btn btn-danger delete btn-sm">
-                        <i class="fas fa-times"></i>
+                <a href="#" class="btn btn-danger btn-sm">
+                        <i class="fas fa-times delete"></i>
                 </a>
             </td>`;
 
         list.appendChild(row);
+    }
+
+    static deleteTrip(el) {
+        if (el.classList.contains('delete')) {
+            el.parentElement.parentElement.parentElement.remove();
+        }
     }
 
     static clearFields() {
@@ -84,9 +90,12 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
     // Add trip to UI
     UI.addTripToList(trip);
 
-    // Clear fields
+    // clear fields
     UI.clearFields();
 
 })
 
 // Event: Remove a trip
+document.querySelector('#trip-list').addEventListener('click', (e) => {
+    UI.deleteTrip(e.target);
+});
