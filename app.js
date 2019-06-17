@@ -82,11 +82,11 @@ class Store {
         localStorage.setItem('trips', JSON.stringify(trips));
     }
 
-    static removeTrip(location) {
+    static removeTrip(tripNotes) {
         const trips = Store.getTrips();
 
         trips.forEach((trip, index) => {
-            if (trip.location === location) {
+            if (trip.tripNotes === tripNotes) {
                 trips.splice(index, 1);
             }
         });
@@ -132,12 +132,16 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
       UI.clearFields();
     }
 
-
 });
 
 // Event: Remove a trip
 document.querySelector('#trip-list').addEventListener('click', (e) => {
+    // Remove trip from UI
     UI.deleteTrip(e.target);
+
+    // Remove trip from store
+    let el = e.target.parentElement.previousElementSibling;
+    Store.removeTrip(el.textContent);
 
     // Show success message
     UI.showAlert('Trip Deleted!', 'info');
