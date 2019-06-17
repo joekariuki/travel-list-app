@@ -79,7 +79,9 @@ class UI {
 }
 
 // Store Class: Handles Storage
-
+class Store {
+  
+}
 
 
 
