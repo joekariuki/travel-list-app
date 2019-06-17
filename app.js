@@ -12,27 +12,6 @@ class Trip {
 // UI Class: Handle UI Tasks
 class UI {
     static displayTrips() {
-        const StoredTrips = [
-            {
-              location: 'Paris, France',
-              arrivalDate: '19th March 2019',
-              departDate: '29th March 2019',
-              tripNotes: 'Great trip! I loved experiencing the french culture. It was a bit cold though :('
-            },
-            {
-              location: 'Seminyak, Bali',
-              arrivalDate: '22nd May 2019',
-              departDate: '1st June 2019',
-              tripNotes: 'I loved Bali! The weather and beaches were amazing!'
-            },
-            {
-              location: 'Cape Town, South Africa',
-              arrivalDate: '5th October 2019',
-              departDate: '5th November 2019',
-              tripNotes: 'Such a great place to visit. I think I want to live here'
-            }
-        ];
-        const trips = StoredTrips;
         trips.forEach(trip => UI.addTripToList(trip));
     }
 
