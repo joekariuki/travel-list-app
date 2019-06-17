@@ -121,4 +121,7 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
 // Event: Remove a trip
 document.querySelector('#trip-list').addEventListener('click', (e) => {
     UI.deleteTrip(e.target);
+
+    // Show success message
+    UI.showAlert('Trip Deleted!', 'info');
 });
