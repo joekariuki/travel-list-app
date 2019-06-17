@@ -60,6 +60,16 @@ class UI {
         }
     }
 
+    static showAlert(message, className) {
+        const div = document.createElement('div');
+        div.className = `alert alert-${className}`;
+        div.appendChild(document.createTextNode(message));
+        const container = document.querySelector('.container');
+        const form = document.querySelector('#trip-form');
+        container.insertBefore(div, form);
+        // Vanish in a sec
+        setTimeout(() => document.querySelector('.alert').remove(), 1000);
+    }
     static clearFields() {
         document.querySelector('#location').value = '';
         document.querySelector('#arrival-date').value = '';
@@ -69,6 +79,10 @@ class UI {
 }
 
 // Store Class: Handles Storage
+
+
+
+
 
 // Event: Display trips
 document.addEventListener('DOMContentLoaded', UI.displayTrips);
@@ -84,16 +98,22 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
     const departDate = document.querySelector('#depart-date').value;
     const tripNotes = document.querySelector('#trip-notes').value;
 
-    // Instatiate trip
-    const trip = new Trip(location, arrivalDate, departDate, tripNotes);
+    // validate
+    if (location === '' || location === '' || arrivalDate === '' || departDate === '' || tripNotes === '') {
+        UI.showAlert('Please fill in all the fields', 'danger');
+    } else {
+      // Instatiate trip
+      const trip = new Trip(location, arrivalDate, departDate, tripNotes);
 
-    // Add trip to UI
-    UI.addTripToList(trip);
+      // Add trip to UI
+      UI.addTripToList(trip);
 
-    // clear fields
-    UI.clearFields();
+      // clear fields
+      UI.clearFields();
+    }
 
-})
+
+});
 
 // Event: Remove a trip
 document.querySelector('#trip-list').addEventListener('click', (e) => {
