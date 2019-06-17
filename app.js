@@ -12,6 +12,9 @@ class Trip {
 // UI Class: Handle UI Tasks
 class UI {
     static displayTrips() {
+
+        const trips = Store.getTrips();
+
         trips.forEach(trip => UI.addTripToList(trip));
     }
 
@@ -59,7 +62,6 @@ class UI {
 
 // Store Class: Handles Storage
 class Store {
-  
     static getTrips() {
         let trips;
 
