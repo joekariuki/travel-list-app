@@ -122,6 +122,9 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
       // Add trip to UI
       UI.addTripToList(trip);
 
+      // Add trip to Store
+      Store.addTrip(trip);
+
       // Show success message
       UI.showAlert('Trip Added!', 'success');
 
