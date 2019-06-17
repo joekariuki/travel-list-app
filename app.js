@@ -28,7 +28,7 @@ class UI {
             <td>${trip.departDate}</td>
             <td>${trip.tripNotes}</td>
             <td>
-                <a href="#" class="btn btn-danger btn-sm">
+                <a href="" class="btn btn-danger btn-sm">
                         <i class="fas fa-times delete"></i>
                 </a>
             </td>`;
