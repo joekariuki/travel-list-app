@@ -60,6 +60,37 @@ class UI {
 // Store Class: Handles Storage
 class Store {
   
+    static getTrips() {
+        let trips;
+
+        if (localStorage.getItem('trips') === null) {
+            trips = [];
+        } else {
+            trips = JSON.parse(localStorage.getItem('trips'));
+        }
+
+        return trips;
+    }
+
+    static addTrip(trip) {
+        const trips = Store.getTrips();
+
+        trips.push(trip);
+
+        localStorage.setItem('trips', JSON.stringify(trips));
+    }
+
+    static removeTrip(location) {
+        const trips = Store.getTrips();
+
+        trips.forEach((trip, index) => {
+            if (trip.location === location) {
+                trips.splice(index, 1);
+            }
+        });
+
+        localStorage.setItem('trips', JSON.stringify(trips));
+    }
 }
 
 
