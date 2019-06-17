@@ -108,6 +108,9 @@ document.querySelector('#trip-form').addEventListener('submit', (e) => {
       // Add trip to UI
       UI.addTripToList(trip);
 
+      // Show success message
+      UI.showAlert('Trip Added!', 'success');
+
       // clear fields
       UI.clearFields();
     }
