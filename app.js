@@ -67,8 +67,8 @@ class UI {
         const container = document.querySelector('.container');
         const form = document.querySelector('#trip-form');
         container.insertBefore(div, form);
-        // Vanish in a sec
-        setTimeout(() => document.querySelector('.alert').remove(), 1000);
+        // Vanish in 2 secs
+        setTimeout(() => document.querySelector('.alert').remove(), 2000);
     }
     static clearFields() {
         document.querySelector('#location').value = '';
